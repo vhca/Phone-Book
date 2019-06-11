@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
-namespace CommonDTO
+namespace CommonDTO.Models_DTO
 {
     [DataContract]
-    public class PersonDTO
+    public class ContactDTO
     {
         #region Properties
 
         [DataMember]
         [Key]
-        public Guid Id { get; set; }
+        public Guid IdContact { get; set; }
 
         [DataMember]
         [Required]
@@ -20,29 +19,24 @@ namespace CommonDTO
         public string Name { get; set; }
 
         [DataMember]
-        public string MiddleName { get; set; }
-
-        [DataMember]
         [Required]
         [MaxLength(50)]
         public string LastName { get; set; }
 
         [DataMember]
-        public string Gender { get; set; }
+        public DateTime BirdtDate { get; set; }
 
-        [DataMember]
-        public int Age { get; set; }
-
-        [DataMember]
-        public string ImageSource { get; set; }
-
+ 
         #endregion
 
         #region Constructors
-        public PersonDTO()
+        public ContactDTO()
         {
-            Id = Guid.NewGuid();
+            IdContact = Guid.NewGuid();
         }
+
+       
+
         #endregion        
     }
 }
