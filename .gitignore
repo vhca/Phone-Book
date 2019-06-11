@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CommonDTO/bin/Debug
+/CommonDTO/obj/Debug
+/CSV Data Base Storage/bin/Debug
+/CSV Data Base Storage/obj/Debug
+/packages
+/PhoneBook/bin
+/PhoneBook/obj/Debug
+/PhoneBook.Tests/bin/Debug
+/PhoneBook.Tests/obj/Debug
+/.vs

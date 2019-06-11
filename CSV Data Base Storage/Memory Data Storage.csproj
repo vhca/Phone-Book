@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4B9DF227-32DE-41B2-A592-DFB1D5A1BAD6}</ProjectGuid>
+    <ProjectGuid>{515BD5F3-1B8F-4EBA-A2ED-92944FA40923}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CommonDTO</RootNamespace>
-    <AssemblyName>CommonDTO</AssemblyName>
+    <RootNamespace>Memory_Data_Storage</RootNamespace>
+    <AssemblyName>Memory Data Storage</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.12.1.2\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,14 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common Interfaces\IPhoneBookProvider.cs" />
-    <Compile Include="Common Interfaces\IRepository.cs" />
-    <Compile Include="Models DTO\AddressDTO.cs" />
-    <Compile Include="Models DTO\E-MailAddressDTO.cs" />
-    <Compile Include="Models DTO\ContactDTO.cs" />
-    <Compile Include="Models DTO\PhoneBookDTO.cs" />
-    <Compile Include="Models DTO\PhoneDTO.cs" />
+    <Compile Include="Memory Provider.cs" />
+    <Compile Include="Data\MemoryDataRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonDTO\CommonDTO.csproj">
+      <Project>{4B9DF227-32DE-41B2-A592-DFB1D5A1BAD6}</Project>
+      <Name>CommonDTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
