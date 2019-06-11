@@ -42,7 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PersonDTO.cs" />
+    <Compile Include="Common Interfaces\IPhoneBookProvider.cs" />
+    <Compile Include="Common Interfaces\IRepository.cs" />
+    <Compile Include="Models DTO\AddressDTO.cs" />
+    <Compile Include="Models DTO\E-MailAddressDTO.cs" />
+    <Compile Include="Models DTO\ContactDTO.cs" />
+    <Compile Include="Models DTO\PhoneBookDTO.cs" />
+    <Compile Include="Models DTO\PhoneDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

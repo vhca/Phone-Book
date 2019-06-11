@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook.Tests", "PhoneBoo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDTO", "CommonDTO\CommonDTO.csproj", "{4B9DF227-32DE-41B2-A592-DFB1D5A1BAD6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access", "Data Access", "{A188D633-0F97-43D8-9319-4CC59EFFD059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memory Data Storage", "CSV Data Base Storage\Memory Data Storage.csproj", "{515BD5F3-1B8F-4EBA-A2ED-92944FA40923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,15 @@ Global
 		{4B9DF227-32DE-41B2-A592-DFB1D5A1BAD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B9DF227-32DE-41B2-A592-DFB1D5A1BAD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B9DF227-32DE-41B2-A592-DFB1D5A1BAD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{515BD5F3-1B8F-4EBA-A2ED-92944FA40923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{515BD5F3-1B8F-4EBA-A2ED-92944FA40923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{515BD5F3-1B8F-4EBA-A2ED-92944FA40923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{515BD5F3-1B8F-4EBA-A2ED-92944FA40923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{515BD5F3-1B8F-4EBA-A2ED-92944FA40923} = {A188D633-0F97-43D8-9319-4CC59EFFD059}
 	EndGlobalSection
 EndGlobal

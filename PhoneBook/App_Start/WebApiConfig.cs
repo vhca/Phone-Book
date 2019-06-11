@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web.Http;
-using CommonDTO;
+using CommonDTO.Models_DTO;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;
+using Microsoft.AspNet.OData.Routing.Conventions;
 using Microsoft.OData;
 using Microsoft.OData.Edm;
 
@@ -25,7 +26,17 @@ namespace PhoneBook
             //    routeTemplate: "api/{controller}/{id}",
             //    defaults: new { id = RouteParameter.Optional }
             //);
-            config.MapODataServiceRoute("ODataRoute", "odata", GetEdmModel());
+
+            config.MapODataServiceRoute(
+                routeName: "ODataRoute",
+                routePrefix: "api/v1.0",
+                model: GetEdmModel());
+
+            config.Routes.MapHttpRoute(
+                name: "ResourceNotFound",
+                routeTemplate: "api/v1.0/{*uri}",
+                defaults: new { controller = "UnrecognizedRoute", action = "ProcessUnrecognizedRoute" });
+
             config.EnsureInitialized();
         }
 
@@ -37,7 +48,7 @@ namespace PhoneBook
                 ContainerName = "PhoneBookContainer"
             };
 
-            builder.EntitySet<PersonDTO>("Person");
+            builder.EntitySet<ContactDTO>("Contact");
 
             return builder.GetEdmModel();
         }
