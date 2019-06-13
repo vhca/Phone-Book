@@ -85,7 +85,9 @@ namespace Memory_Data_Storage
 
         public List<PhoneDTO> GetPhoneList(Guid contactId)
         {
-            throw new NotImplementedException();
+            return (from phoneBook in MemoryDataRecord.Instance.PhoneBook
+                    where phoneBook.Contact.IdContact == contactId
+                    select phoneBook.PhoneList).FirstOrDefault();    //TODO: need a list??
         }
 
         public bool InsertPhone(PhoneDTO phone)

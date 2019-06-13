@@ -49,6 +49,7 @@ namespace PhoneBook
             };
 
             builder.EntitySet<ContactDTO>("Contact");
+            builder.EntitySet<PhoneDTO>("Phone");
 
             return builder.GetEdmModel();
         }
