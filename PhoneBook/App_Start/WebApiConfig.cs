@@ -16,17 +16,7 @@ namespace PhoneBook
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
-            // Web API routes
-            //config.MapHttpAttributeRoutes();
-
-            //config.Routes.MapHttpRoute(
-            //    name: "DefaultApi",
-            //    routeTemplate: "api/{controller}/{id}",
-            //    defaults: new { id = RouteParameter.Optional }
-            //);
-
+            
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: "api/v1.0",
@@ -34,7 +24,7 @@ namespace PhoneBook
 
             config.Routes.MapHttpRoute(
                 name: "ResourceNotFound",
-                routeTemplate: "api/v1.0/{*uri}",
+                routeTemplate: "api/v1.0/{controller}",
                 defaults: new { controller = "UnrecognizedRoute", action = "ProcessUnrecognizedRoute" });
 
             config.EnsureInitialized();
@@ -49,6 +39,7 @@ namespace PhoneBook
             };
 
             builder.EntitySet<ContactDTO>("Contact");
+           // builder.EntitySet<PhoneDTO>("Phone");//.EntityType.HasKey(p => p.IdPhone); 
 
             return builder.GetEdmModel();
         }

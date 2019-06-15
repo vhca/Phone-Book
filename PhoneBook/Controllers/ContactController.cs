@@ -33,6 +33,7 @@ namespace PhoneBook.Controllers
 
         #region Public API Methods
         // GET: api/v1.0/Contact
+
         [ResponseType(typeof(List<ContactDTO>))]
         [EnableQuery]
         public async Task<IHttpActionResult> Get(CancellationToken cancellationToken)
@@ -44,6 +45,7 @@ namespace PhoneBook.Controllers
 
 
         // GET: api/v1.0/Contact(xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
+        [HttpGet]
         [ResponseType(typeof(ContactDTO))]
         [EnableQuery]
         public async Task<IHttpActionResult> Get([FromODataUri] Guid key, CancellationToken cancellationToken)

@@ -9,15 +9,8 @@ namespace CommonDTO.Models_DTO
 {
     public class PhoneBookDTO
     {
-
         public ContactDTO Contact { get; set; }
 
-        public List<E_MailAddressDTO> EmailList { get; set; }
-
-        public List<PhoneDTO> PhoneList { get; set; }
-
-        public List<AddressDTO> AddressList { get; set; }
-
-
+        public List<PhoneDTO> Phone { get; set; }
     }
 }

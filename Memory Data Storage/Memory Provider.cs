@@ -35,10 +35,6 @@ namespace Memory_Data_Storage
                 MemoryDataRecord.Instance.PhoneBook.Add(new PhoneBookDTO
                 {
                     Contact = contact,
-                    AddressList = new List<AddressDTO>(),
-                    EmailList = new List<E_MailAddressDTO>(),
-                    PhoneList = new List<PhoneDTO>()
-
                 });
                 return true;
             }
@@ -60,6 +56,7 @@ namespace Memory_Data_Storage
                     phoneBook.Contact.Name = contact.Name;
                     phoneBook.Contact.LastName = contact.LastName;
                     phoneBook.Contact.BirdtDate = contact.BirdtDate;
+                    phoneBook.Contact.Phone = contact.Phone;
                     return true;
                 }
 

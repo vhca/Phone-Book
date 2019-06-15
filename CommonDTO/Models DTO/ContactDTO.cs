@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
@@ -26,13 +27,17 @@ namespace CommonDTO.Models_DTO
         [DataMember]
         public DateTime BirdtDate { get; set; }
 
- 
+        [DataMember]
+        public List<PhoneDTO> Phone { get; set; }
+
+       
         #endregion
 
         #region Constructors
         public ContactDTO()
         {
             IdContact = Guid.NewGuid();
+            Phone = new List<PhoneDTO>();
         }
 
        
